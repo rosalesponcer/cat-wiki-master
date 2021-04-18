@@ -1,0 +1,25 @@
+// Monserrat
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+
+// Mystery Quest
+@import url('https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap');
+
+
+$monserrat:'Montserrat',
+sans-serif;
+
+$mystery-quest:'Mystery Quest',
+cursive;
+
+// weight
+.fw-medium {
+  font-weight: 500;
+}
+
+.fw-s-bold {
+  font-weight: 600;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
