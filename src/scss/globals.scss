@@ -17,10 +17,13 @@ body {
 }
 
 .container {
-    padding-left: 6rem;
-    padding-right: 6rem;
 
     @media(max-width:480px) {
+        padding-left: 1.125rem;
+        padding-right: 1.125rem;
+    }
+
+    @media(min-width:481px) {
         padding-left: 1.125rem;
         padding-right: 1.125rem;
     }

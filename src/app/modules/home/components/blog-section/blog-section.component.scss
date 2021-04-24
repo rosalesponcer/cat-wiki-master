@@ -31,9 +31,12 @@
 
     &__column {
         flex-flow: column nowrap;
+        width: calc(50% - 1.061875rem/2);
     }
 
     &__img {
+        max-width: 100%;
+
         &--one {
             width: 10.751875rem;
             height: 6.568125rem;
