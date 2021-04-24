@@ -1,0 +1,101 @@
+@import 'variables.scss';
+
+.home-hero-section {
+    width: 21.1875rem;
+    height: 9.136875rem;
+
+    &__main {
+        overflow: hidden;
+
+        width: 100%;
+        height: 100%;
+
+        background-image: url(../../../../../assets/media/img/HeroImagesm.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+
+        border-radius: 2.625rem 2.625rem 0px 0px;
+    }
+
+    &__content {
+        width: 100%;
+        height: 100%;
+
+        padding-top: 1.3125rem;
+        padding-left: 1.8125rem;
+
+        color: $secondary-color;
+    }
+
+    &__title,
+    &__desc {
+        margin: 0;
+    }
+
+    &__title {
+        padding-bottom: 0.229375rem;
+
+        font-family: $mystery-quest;
+        font-weight: $regular;
+        font-size: 0.875rem;
+        line-height: 1.1875rem;
+    }
+
+    &__desc {
+        width: 8.495rem;
+        padding-top: 0.229375rem;
+
+        font-weight: $medium !important;
+        font-size: 0.625rem;
+        line-height: 0.75rem;
+    }
+
+    &__input {
+        width: 5.725625rem;
+        height: 1.91875rem;
+        margin-top: 1.136875rem;
+    }
+}
+
+.home-hero-section-header {
+    background: $cream-color;
+    width: 100%;
+    padding: 1.3125rem 1.8125rem;
+
+    border-radius: 0 0 2.625rem 2.625rem;
+
+    &__subtitle {
+        width: 11.57rem;
+        height: 2.75rem;
+
+        padding: 0;
+        margin: 0;
+        margin-top: 1.079375rem;
+
+        font-weight: $bold;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+    }
+
+    &__breeds-list {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.8125rem;
+
+        padding-top: 1.628125rem;
+    }
+
+    &__img {
+        width: 8.375rem;
+        height: 8.375rem;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 0.75rem 0;
+
+        font-weight: $semi-bold;
+        font-size: 0.74rem;
+        line-height: 0.9375rem;
+    }
+}

@@ -1,0 +1,60 @@
+@import 'variables';
+
+.search-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 25.75rem;
+
+    background: $secondary-color;
+    border-radius: 0.75rem;
+
+    &__close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 2.5rem;
+        height: 2.5rem;
+
+        margin-top: 0.4375rem;
+        margin-bottom: 1.911875rem;
+
+        margin-left: auto;
+
+        background: $smoke-color;
+        color: $primary-color;
+        border-radius: .5rem;
+
+        font-size: 0.8125rem;
+    }
+
+    &__search {
+        width: 21.1875rem;
+        height: 2.844375rem;
+    }
+
+    &__results {
+        padding-top: 0.8775rem;
+    }
+
+    &__result {
+        height: 3.51rem;
+        display: flex;
+        align-items: center;
+
+        padding-left: 0.55625rem;
+        color: $primary-color;
+
+        border-radius: 0.75rem;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+
+        &:hover,
+        &:focus {
+            background: $smoke-color;
+        }
+    }
+}

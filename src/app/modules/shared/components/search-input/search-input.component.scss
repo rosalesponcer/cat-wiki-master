@@ -1,0 +1,44 @@
+@import 'color-variables';
+
+.search-input {
+    background-color: $secondary-color;
+    color: $primary-color;
+    border-radius: 3.6875rem;
+    padding-left: 0.8125rem;
+
+    &--border {
+        border: 1px solid $primary-color;
+    }
+
+    &__view {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__control {
+        width: 89%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        background-color: transparent;
+        font-size: 0.8125rem;
+
+        &--popup {
+            font-size: 1.125rem;
+        }
+    }
+
+    &__icon {
+        padding-right: 0.645rem;
+        font-size: 0.8125rem;
+		margin-left: auto;
+
+        &--popup {
+            font-size: 1.125rem;
+        }
+    }
+}

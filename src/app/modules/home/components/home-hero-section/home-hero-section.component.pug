@@ -1,0 +1,25 @@
+section
+	.home-hero-section
+
+		.home-hero-section__main
+
+			.home-hero-section__content
+				h1.home-hero-section__title catwiki
+				h3.home-hero-section__desc Get to know more about your cat breed
+
+				.home-hero-section__input
+					search-input(*ngIf="!text", (onInput)="onInput($event)")
+
+				search-popup(*ngIf="text", [text]="text", (onClose)="onInput('')")
+
+	.home-hero-section-header
+		custom-title(text="Most Searched Breeds" position="bottom")
+
+		h2.home-hero-section-header__subtitle 66+ Breeds For you to discover
+
+		.home-hero-section-header__breeds-list
+			.home-hero-section-header__breed(*ngFor="let bredd of breedList")
+				.home-hero-section-header__img
+					custom-img([data]="bredd.src", [alt]="bredd.text")
+
+				p.home-hero-section-header__title {{ bredd.text }}

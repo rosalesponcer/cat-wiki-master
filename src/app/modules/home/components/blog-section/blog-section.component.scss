@@ -1,0 +1,53 @@
+@import 'variables.scss';
+
+.blog-section {
+    &__Text {
+        margin-top: 2.6775rem;
+        font-size: 1.125rem;
+        line-height: 1.365rem;
+    }
+
+    &__cta {
+        margin: 0;
+        margin-top: 1.684375rem;
+        color: rgba(41, 21, 7, 0.6);
+        font-weight: $bold;
+    }
+
+    &__button {
+        margin-left: 1rem;
+    }
+
+    &__row,
+    &__column {
+        display: flex;
+        gap: 1.061875rem;
+    }
+
+    &__row {
+        margin-top: 3.9825rem;
+        flex-flow: row wrap;
+    }
+
+    &__column {
+        flex-flow: column nowrap;
+    }
+
+    &__img {
+        &--one {
+            width: 10.751875rem;
+            height: 6.568125rem;
+        }
+
+        &--two {
+            width: 7.684375rem;
+            height: 11.526875rem;
+            margin-left: auto;
+        }
+
+        &--three {
+            width: 9.37375rem;
+            height: 15.168125rem;
+        }
+    }
+}

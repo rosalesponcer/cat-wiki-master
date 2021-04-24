@@ -1,0 +1,30 @@
+@import 'normalize/normalize';
+@import 'variables/variables';
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $monserrat;
+    font-weight: $medium;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+
+    @media(max-width:375px) {
+        padding-left: 1.125rem;
+        padding-right: 1.125rem;
+    }
+
+    margin-left: auto;
+    margin-right: auto;
+}

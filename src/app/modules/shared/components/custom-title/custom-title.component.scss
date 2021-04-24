@@ -1,0 +1,43 @@
+@import 'variables.scss';
+
+.custom-title {
+    &__decorator {
+        background: #4D270C;
+        border-radius: 4.8125rem;
+
+        &--top {
+            margin-bottom: 0.360625rem;
+        }
+
+        &--bottom {
+            margin-top: 0.360625rem;
+        }
+
+        &--lg {
+            width: 3.1775rem;
+            height: 0.195625rem;
+        }
+
+        &--md {
+            width: 2.555625rem;
+            height: 0.1875rem;
+        }
+    }
+
+    &__text {
+        margin: 0;
+        padding: 0;
+
+
+        &--md {
+            font-size: 0.75rem;
+            line-height: 0.9375rem;
+        }
+
+        &--lg {
+            font-size: 2.5rem;
+            line-height: 3.0625rem;
+			font-weight: $bold;
+        }
+    }
+}

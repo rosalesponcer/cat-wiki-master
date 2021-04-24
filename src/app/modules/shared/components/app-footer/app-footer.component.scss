@@ -1,0 +1,23 @@
+@import 'variables.scss';
+
+.app-footer {
+    padding: 1.8125rem;
+    margin-top: 1.395rem;
+
+    background: $bg-color;
+    color: $secondary-color;
+
+    border-radius: 2.625rem 2.625rem 0 0;
+
+    svg {
+        path {
+            fill: $secondary-color;
+        }
+    }
+
+    &__copyright {
+        font-size: 0.75rem;
+        line-height: 0.914375rem;
+        font-weight: $bold;
+    }
+}

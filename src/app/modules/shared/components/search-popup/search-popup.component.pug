@@ -1,0 +1,22 @@
+.search-popup
+
+	.container
+
+		.search-popup__close((click)="close()")
+			i.fas.fa-times
+
+		.search-popup__search
+			search-input([text]="text", [border]="true", [popup]="true")
+
+		.search-popup__results
+			.search-popup__result
+				span American Bobtail
+
+			.search-popup__result
+				span American Curl
+
+			.search-popup__result
+				span American Shorthair
+
+			.search-popup__result
+				span American Wirehair

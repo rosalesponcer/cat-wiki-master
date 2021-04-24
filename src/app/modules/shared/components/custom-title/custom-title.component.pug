@@ -1,0 +1,6 @@
+.custom-title(*ngIf="text")
+	.custom-title__decorator.custom-title__decorator--top(*ngIf="position === 'top'", [ngClass]="classSize")
+
+	p.custom-title__text([ngClass]="classText") {{ text }}
+
+	.custom-title__decorator.custom-title__decorator--bottom(*ngIf="position === 'bottom'", [ngClass]="classSize")
