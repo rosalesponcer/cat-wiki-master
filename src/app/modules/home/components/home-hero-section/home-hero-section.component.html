@@ -1,1 +1,27 @@
-<section><div class="home-hero-section"><div class="home-hero-section__main"><div class="home-hero-section__content"><h1 class="home-hero-section__title">catwiki</h1><h3 class="home-hero-section__desc">Get to know more about your cat breed</h3><div class="home-hero-section__input"><search-input *ngIf="!text" (onInput)="onInput($event)"></search-input></div><search-popup *ngIf="text" [text]="text" (onClose)="onInput('')"></search-popup></div></div></div><div class="home-hero-section-header"><custom-title text="Most Searched Breeds" position="bottom"></custom-title><h2 class="home-hero-section-header__subtitle">66+ Breeds For you to discover</h2><div class="home-hero-section-header__breeds-list"><div class="home-hero-section-header__breed" *ngFor="let bredd of breedList"><div class="home-hero-section-header__img"><custom-img [data]="bredd.src" [alt]="bredd.text"></custom-img></div><p class="home-hero-section-header__title">{{ bredd.text }}</p></div></div></div></section>
+
+<section>
+  <div class="home-hero-section">
+    <div class="home-hero-section__main">
+      <div class="home-hero-section__content">
+        <h1 class="home-hero-section__title">catwiki</h1>
+        <h3 class="home-hero-section__desc">Get to know more about your cat breed</h3>
+        <div class="home-hero-section__input">
+          <search-input *ngIf="!text" (onInput)="onInput($event)"></search-input>
+        </div>
+        <search-popup *ngIf="text" [text]="text" (onClose)="onInput('')"></search-popup>
+      </div>
+    </div>
+  </div>
+  <div class="home-hero-section-header">
+    <custom-title text="Most Searched Breeds" position="bottom"></custom-title>
+    <h2 class="home-hero-section-header__subtitle">66+ Breeds For you to discover</h2>
+    <div class="home-hero-section-header__breeds-list">
+      <div class="home-hero-section-header__breed" *ngFor="let bredd of breedList">
+        <div class="home-hero-section-header__img">
+          <custom-img [data]="bredd.src" [alt]="bredd.text"></custom-img>
+        </div>
+        <p class="home-hero-section-header__title">{{ bredd.text }}</p>
+      </div>
+    </div>
+  </div>
+</section>
