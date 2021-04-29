@@ -1,6 +1,8 @@
 .blog-section
-	.blog-section__text
-		custom-title(text="Why should you have a cat?" size="lg")
+	.blog-section__text-container
+
+		.blog-section__title
+			custom-title(text="Why should you have a cat?" size="lg")
 
 		p.blog-section__text Having a cat around you can actually trigger the release of calming chemicals in your body which lower your stress and anxiety leves
 
@@ -9,12 +11,12 @@
 
 	.blog-section__row
 		.blog-section__column
-			.blog-section__img--one
+			.blog-section__img.blog-section__img--one
 				custom-img(data="../../../../../assets/media/img/image-1.png" alt="cat" type="square")
 
-			.blog-section__img--two
+			.blog-section__img.blog-section__img--two
 				custom-img(data="../../../../../assets/media/img/image-2.png" alt="cat" type="square")
 
 		.blog-section__column
-			.blog-section__img--three
+			.blog-section__img.blog-section__img--three
 				custom-img(data="../../../../../assets/media/img/image-3.png" alt="cat" type="square")

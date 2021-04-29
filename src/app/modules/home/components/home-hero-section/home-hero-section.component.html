@@ -3,12 +3,16 @@
   <div class="home-hero-section">
     <div class="home-hero-section__main">
       <div class="home-hero-section__content">
-        <h1 class="home-hero-section__title">catwiki</h1>
+        <h1 class="home-hero-section__title" *ngIf="sizingSrv.isSm()">catwiki</h1>
+        <div class="logo-container" *ngIf="!sizingSrv.isSm()"><img class="logo-container__name" src="../../../../../assets/media/svg/nameLogo.svg" alt="Cat logo"><img class="logo-container__cat" src="../../../../../assets/media/svg/catLogo.svg" alt="Cat logo"></div>
         <h3 class="home-hero-section__desc">Get to know more about your cat breed</h3>
         <div class="home-hero-section__input">
-          <search-input *ngIf="!text" (onInput)="onInput($event)"></search-input>
+          <search-input *ngIf="!text || !sizingSrv.isSm()" (onInput)="onInput($event)"></search-input>
         </div>
-        <search-popup *ngIf="text" [text]="text" (onClose)="onInput('')"></search-popup>
+        <div class="home-hero-section__result-list" *ngIf="text &amp;&amp; !sizingSrv.isSm()">
+          <search-option-list></search-option-list>
+        </div>
+        <search-popup *ngIf="text &amp;&amp; sizingSrv.isSm()" [text]="text" (onClose)="onInput('')"></search-popup>
       </div>
     </div>
   </div>

@@ -1,17 +1,108 @@
 @import 'variables.scss';
 
 .home-hero-section {
-    width: 21.1875rem;
-    height: 9.136875rem;
+    width: 100%;
+
+    @media (max-width:480px) {
+        height: 9.136875rem;
+
+        &__main {
+            background-image: url(../../../../../assets/media/img/HeroImagesm.png);
+        }
+
+        &__content {
+            padding-top: 1.3125rem;
+            padding-left: 1.8125rem;
+        }
+
+        &__title {
+            font-family: $mystery-quest;
+            font-weight: $regular;
+            font-size: 0.875rem;
+            line-height: 1.1875rem;
+            padding-bottom: 0.229375rem;
+        }
+
+        &__desc {
+            width: 8.495rem;
+            padding-top: 0.229375rem;
+
+            font-size: 0.625rem;
+            line-height: 0.75rem;
+        }
+
+        &__input {
+            width: 5.725625rem;
+            height: 1.91875rem;
+            margin-top: 1.136875rem;
+        }
+    }
+
+    @media (min-width:481px) {
+        height: 33.636875rem;
+
+        &__main {
+            background-image: url(../../../../../assets/media/img/HeroImagelg.png);
+        }
+
+        &__content {
+            padding-top: 7.221875rem;
+            padding-left: 6.75rem;
+        }
+
+        .logo-container {
+            max-width: 19.41rem;
+            padding-bottom: 0.699375rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1.42125rem;
+
+            &__name {
+                width: 12.9375rem;
+                height: 5.4375rem;
+            }
+
+            &__cat {
+                width: 5.05125rem;
+                height: 4.07625rem;
+            }
+        }
+
+        &__desc {
+            width: 23.20625rem;
+            padding-top: 0.699375rem;
+
+            font-size: 1.5rem;
+            line-height: 1.8125rem;
+        }
+
+        &__input,
+        &__result-list {
+            width: 24.66375rem;
+        }
+
+        &__input {
+            height: 4.354375rem;
+            margin-top: 3.268125rem;
+        }
+
+
+        &__result-list {
+            position: relative;
+            left: 0;
+            right: 0;
+            margin-top: 1.046875rem;
+        }
+    }
 
     &__main {
-        overflow: hidden;
-
-        width: 100%;
         height: 100%;
+        width: 100%;
 
-        background-image: url(../../../../../assets/media/img/HeroImagesm.png);
-        background-size: 100%;
+        // overflow: hidden;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
 
         border-radius: 2.625rem 2.625rem 0px 0px;
@@ -19,11 +110,6 @@
 
     &__content {
         width: 100%;
-        height: 100%;
-
-        padding-top: 1.3125rem;
-        padding-left: 1.8125rem;
-
         color: $secondary-color;
     }
 
@@ -32,62 +118,86 @@
         margin: 0;
     }
 
-    &__title {
-        padding-bottom: 0.229375rem;
-
-        font-family: $mystery-quest;
-        font-weight: $regular;
-        font-size: 0.875rem;
-        line-height: 1.1875rem;
-    }
-
     &__desc {
-        width: 8.495rem;
-        padding-top: 0.229375rem;
-
         font-weight: $medium !important;
-        font-size: 0.625rem;
-        line-height: 0.75rem;
-    }
-
-    &__input {
-        width: 5.725625rem;
-        height: 1.91875rem;
-        margin-top: 1.136875rem;
     }
 }
 
 .home-hero-section-header {
     background: $cream-color;
     width: 100%;
-    padding: 1.3125rem 1.8125rem;
 
     border-radius: 0 0 2.625rem 2.625rem;
 
-    &__subtitle {
-        width: 11.57rem;
-        height: 2.75rem;
+    @media (max-width:480px) {
+        padding: 1.3125rem 1.8125rem;
 
-        padding: 0;
+        &__subtitle {
+            width: 11.57rem;
+            height: 2.75rem;
+
+            margin-top: 1.079375rem !important;
+
+            font-size: 1.125rem;
+            line-height: 1.375rem;
+        }
+
+        &__breeds-list {
+            padding-top: 1.628125rem;
+            gap: 0.8125rem;
+        }
+
+        &__breed {
+            max-width: calc(50% - 0.8125rem/2);
+        }
+
+        &__img {
+            width: 8.375rem;
+            height: 8.375rem;
+        }
+    }
+
+    @media (min-width:481px) {
+        padding: 2.5rem 6.75rem;
+
+        &__subtitle {
+            width: 33.558125rem;
+            height: 7.375rem;
+
+            font-size: 3rem;
+            line-height: 3.6875rem;
+        }
+
+        &__breeds-list {
+            padding-top: 2.875rem;
+            gap: 3.1875rem;
+        }
+
+        &__img {
+            width: 13.75rem;
+            height: 13.75rem;
+        }
+    }
+
+    &__subtitle {
         margin: 0;
-        margin-top: 1.079375rem;
+        padding: 0;
 
         font-weight: $bold;
-        font-size: 1.125rem;
-        line-height: 1.375rem;
+    }
+
+    &__breed {
+        cursor: pointer;
     }
 
     &__breeds-list {
         display: flex;
         flex-flow: row wrap;
-        gap: 0.8125rem;
-
-        padding-top: 1.628125rem;
     }
 
     &__img {
-        width: 8.375rem;
-        height: 8.375rem;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     &__title {

@@ -6,6 +6,7 @@ import { AppHeaderComponent } from './app-header/app-header.component';
 import { CustomImgComponent } from './custom-img/custom-img.component';
 import { CustomTitleComponent } from './custom-title/custom-title.component';
 import { SearchInputComponent } from './search-input/search-input.component';
+import { SearchOptionListComponent } from './search-option-list/search-option-list.component';
 import { SearchPopupComponent } from './search-popup/search-popup.component';
 
 const LIST = [
@@ -14,7 +15,8 @@ const LIST = [
 	SearchPopupComponent,
 	CustomTitleComponent,
 	CustomImgComponent,
-	AppFooter
+	AppFooter,
+	SearchOptionListComponent
 ];
 
 @NgModule({

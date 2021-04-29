@@ -11,7 +11,10 @@ export class CustomImgComponent {
 	@Input() alt: string = '';
 	@Input() type: 'rounded' | 'square' = 'rounded';
 
+	loaded: boolean = false;
+
 	get typeClass() {
-		return this.type === 'rounded' ? 'custom-img__content--rounded' : '';
+		if (!this.loaded) return 'custom-img__content--hidden';
+		else return this.type === 'rounded' ? 'custom-img__content--rounded' : '';
 	}
 }

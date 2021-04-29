@@ -9,15 +9,28 @@
 
     border-radius: 2.625rem 2.625rem 0 0;
 
+
+    @media(min-width:481px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__copyright {
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    @media(max-width:480px) {
+        &__copyright {
+            font-size: 0.75rem;
+            line-height: 0.914375rem;
+        }
+    }
+
     svg {
         path {
             fill: $secondary-color;
         }
-    }
-
-    &__copyright {
-        font-size: 0.75rem;
-        line-height: 0.914375rem;
-        font-weight: $bold;
     }
 }

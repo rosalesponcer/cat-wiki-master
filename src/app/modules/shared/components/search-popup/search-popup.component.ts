@@ -10,7 +10,12 @@ export class SearchPopupComponent {
 	@Input() text: string = '';
 	@Output() onClose = new EventEmitter<boolean>();
 
+	ngOnInit() {
+		if (window.screen.width <= 375) document.body.style.overflowY = 'hidden';
+	}
+
 	close() {
 		this.onClose.emit(false);
+		document.body.style.overflowY = 'auto';
 	}
 }

@@ -4,7 +4,33 @@
     background-color: $secondary-color;
     color: $primary-color;
     border-radius: 3.6875rem;
-    padding-left: 0.8125rem;
+
+
+    @media (max-width:480px) {
+        padding-left: 0.8125rem;
+
+        &__control {
+            font-size: 0.8125rem;
+        }
+
+        &__icon {
+            padding-right: 0.645rem;
+            font-size: 0.8125rem;
+        }
+    }
+
+    @media (min-width:481px) {
+        padding-left: 1.7875rem;
+
+        &__control {
+            font-size: 1.3275rem;
+        }
+
+        &__icon {
+            padding-right: 1.704375rem;
+            font-size: 1.065625rem;
+        }
+    }
 
     &--border {
         border: 1px solid $primary-color;
@@ -25,7 +51,6 @@
         outline: none;
         background: transparent;
         background-color: transparent;
-        font-size: 0.8125rem;
 
         &--popup {
             font-size: 1.125rem;
@@ -33,9 +58,7 @@
     }
 
     &__icon {
-        padding-right: 0.645rem;
-        font-size: 0.8125rem;
-		margin-left: auto;
+        margin-left: auto;
 
         &--popup {
             font-size: 1.125rem;
