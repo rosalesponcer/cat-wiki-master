@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { SizingService } from 'src/app/providers/sizing.service';
 
 @Component({
 	selector: 'search-input',
@@ -15,6 +16,11 @@ export class SearchInputComponent {
 
 	@Output() onInput = new EventEmitter<string>();
 
+
+	constructor(
+		private _sizingSrv: SizingService
+	) { }
+
 	ngAfterViewInit() {
 		if (this.popup && this.text && this.inputElement) {
 			this.inputElement.nativeElement.focus();
@@ -23,5 +29,14 @@ export class SearchInputComponent {
 
 	sendText() {
 		this.onInput.emit(this.text);
+	}
+
+	clear() {
+		this.text = '';
+		this.sendText();
+	}
+
+	get placeholder() {
+		return this._sizingSrv.isSm() ? 'Search' : 'Enter your breed';
 	}
 }

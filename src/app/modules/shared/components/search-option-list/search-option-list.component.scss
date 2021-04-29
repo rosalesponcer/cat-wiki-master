@@ -1,0 +1,33 @@
+@import 'variables';
+
+.search-option-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+
+    background: $secondary-color;
+    border-radius: 0.75rem;
+    padding: 0.705625rem;
+
+    &__option {
+        cursor: pointer;
+
+        height: 3.51rem;
+        display: flex;
+        align-items: center;
+
+        padding-left: 0.55625rem;
+        color: $primary-color;
+
+        border-radius: 0.75rem;
+        font-size: 1.125rem;
+        line-height: 1.375rem;
+
+        &:hover,
+        &:focus {
+            background: $smoke-color;
+        }
+    }
+}

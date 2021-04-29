@@ -1,7 +1,1 @@
-
-<div class="search-input" [ngClass]="{'search-input--border':border}">
-  <div class="search-input__view">
-    <input class="search-input__control" #input type="text" placeholder="Search" [(ngModel)]="text" [ngClass]="{'search-input__control--popup':popup}" (input)="sendText()">
-    <div class="search-input__icon" [ngClass]="{'search-input__icon--popup':popup}"><i class="fas fa-search"></i></div>
-  </div>
-</div>
+<div class="search-input" [ngClass]="{'search-input--border':border}"><label class="search-input__view"><input class="search-input__control" #input type="text" [placeholder]="placeholder" [(ngModel)]="text" [ngClass]="{'search-input__control--popup':popup}" (input)="sendText()" (keydown.esc)="clear()"><div class="search-input__icon" [ngClass]="{'search-input__icon--popup':popup}"><i class="fas fa-search"></i></div></label></div>

@@ -1,5 +1,10 @@
 @import 'normalize/normalize';
+@import 'scroll-bar';
+
+@import 'fonts';
 @import 'variables/variables';
+
+
 
 html {
     box-sizing: border-box;
@@ -16,16 +21,19 @@ body {
     box-sizing: inherit;
 }
 
-.container {
+a {
+	color: inherit;
+}
 
+.container {
     @media(max-width:480px) {
         padding-left: 1.125rem;
         padding-right: 1.125rem;
     }
 
     @media(min-width:481px) {
-        padding-left: 1.125rem;
-        padding-right: 1.125rem;
+        padding-left: 6rem;
+        padding-right: 6rem;
     }
 
     margin-left: auto;
