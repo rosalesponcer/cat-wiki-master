@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChanges } from '@angular/core';
 import { HERO_IMG_LIST, IImg } from 'src/app/const';
 import { IBreed } from 'src/app/interfaces';
 import { SizingService } from 'src/app/providers/sizing.service';
 import { BreedService } from 'src/app/services/breed.service';
+
 
 
 @Component({
@@ -24,7 +25,6 @@ export class HomeHeroSection {
 	ngOnInit() {
 		this.breedSrv.query({ limit: 4 })
 			.subscribe(breeds => {
-				console.log(breeds)
 				this.breedList = breeds;
 			});
 	}
@@ -34,10 +34,8 @@ export class HomeHeroSection {
 			text = text || '';
 			this.text = text;
 
-			console.log(text);
 			this.breedSrv.searchByName({ q: text })
 				.subscribe(res => {
-					console.log(res);
 					this.searchResult = res;
 				});
 		}, 150);
