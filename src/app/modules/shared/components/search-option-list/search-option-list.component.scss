@@ -6,10 +6,15 @@
     top: 0;
 
     width: 100%;
-
     background: $secondary-color;
     border-radius: 0.75rem;
     padding: 0.705625rem;
+
+    &__container {
+        width: 100%;
+        max-height: 22.46875rem;
+        overflow-y: auto;
+    }
 
     &__option {
         cursor: pointer;

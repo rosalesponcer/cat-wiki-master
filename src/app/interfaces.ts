@@ -1,4 +1,4 @@
-export interface Breed {
+export interface IBreed {
 	adaptability?: number;
 	affection_level?: number;
 	bidability?: number;
@@ -35,11 +35,19 @@ export interface Breed {
 	vcahospitals_url?: string;
 	vetstreet_url?: string;
 	vocalisation?: number;
-	weight?: Weight;
+	weight?: IWeight;
 	wikipedia_url?: string;
 }
 
-export interface Weight {
+export interface IWeight {
 	imperial?: string;
 	metric?: string;
+}
+
+export interface IParameters {
+	attach_breed?: number;
+	page?: number;
+	limit?: number;
+
+	q?: string;
 }

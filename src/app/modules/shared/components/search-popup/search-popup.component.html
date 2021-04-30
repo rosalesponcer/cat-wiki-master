@@ -6,10 +6,7 @@
       <search-input [text]="text" [border]="true" [popup]="true"></search-input>
     </div>
     <div class="search-popup__results">
-      <div class="search-popup__result"><span>American Bobtail</span></div>
-      <div class="search-popup__result"><span>American Curl</span></div>
-      <div class="search-popup__result"><span>American Shorthair</span></div>
-      <div class="search-popup__result"><span>American Wirehair</span></div>
+      <div class="search-popup__result" *ngFor="let breed of results"><span>{{ result.name }}</span></div>
     </div>
   </div>
 </div>
