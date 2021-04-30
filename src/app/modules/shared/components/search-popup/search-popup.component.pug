@@ -6,8 +6,8 @@
 			i.fas.fa-times
 
 		.search-popup__search
-			search-input([text]="text", [border]="true", [popup]="true")
+			search-input([text]="text", [border]="true", [popup]="true", (onInput)="onInput($event)")
 
 		.search-popup__results
 			.search-popup__result(*ngFor="let breed of results")
-				span {{ result.name }}
+				span {{ breed.name }}

@@ -3,10 +3,10 @@
   <div class="container">
     <div class="search-popup__close" (click)="close()"><i class="fas fa-times"></i></div>
     <div class="search-popup__search">
-      <search-input [text]="text" [border]="true" [popup]="true"></search-input>
+      <search-input [text]="text" [border]="true" [popup]="true" (onInput)="onInput($event)"></search-input>
     </div>
     <div class="search-popup__results">
-      <div class="search-popup__result" *ngFor="let breed of results"><span>{{ result.name }}</span></div>
+      <div class="search-popup__result" *ngFor="let breed of results"><span>{{ breed.name }}</span></div>
     </div>
   </div>
 </div>
