@@ -1,12 +1,4 @@
 .search-option-list
-	.search-option-list__option
-		span American Bobtail
-
-	.search-option-list__option
-		span American Curl
-
-	.search-option-list__option
-		span American Shorthair
-
-	.search-option-list__option
-		span American Wirehair
+	.search-option-list__container
+		.search-option-list__option(*ngFor="let result of results")
+			span {{ result.name }}

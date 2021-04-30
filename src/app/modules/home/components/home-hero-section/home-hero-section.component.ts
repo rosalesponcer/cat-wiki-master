@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { HERO_IMG_LIST, IImg } from 'src/app/const';
+import { IBreed } from 'src/app/interfaces';
 import { SizingService } from 'src/app/providers/sizing.service';
+import { BreedService } from 'src/app/services/breed.service';
+
 
 @Component({
 	selector: 'home-hero-section',
@@ -10,18 +13,33 @@ import { SizingService } from 'src/app/providers/sizing.service';
 
 export class HomeHeroSection {
 	text: string = '';
-	breedList: IImg[] = [];
+	breedList: IBreed[] = [];
+	searchResult: IBreed[] = [];
 
 	constructor(
-		public sizingSrv: SizingService
+		public sizingSrv: SizingService,
+		private breedSrv: BreedService
 	) { }
 
 	ngOnInit() {
-		this.breedList = HERO_IMG_LIST;
+		this.breedSrv.query({ limit: 4 })
+			.subscribe(breeds => {
+				console.log(breeds)
+				this.breedList = breeds;
+			});
 	}
 
 	onInput(text: string = '') {
-		text = text || '';
-		this.text = text;
+		setTimeout(() => {
+			text = text || '';
+			this.text = text;
+
+			console.log(text);
+			this.breedSrv.searchByName({ q: text })
+				.subscribe(res => {
+					console.log(res);
+					this.searchResult = res;
+				});
+		}, 150);
 	}
 }

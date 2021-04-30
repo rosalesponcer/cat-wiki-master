@@ -16,8 +16,8 @@ section
 					search-input(*ngIf="!text || !sizingSrv.isSm()", (onInput)="onInput($event)")
 
 				.home-hero-section__result-list(*ngIf="text && !sizingSrv.isSm()")
-					search-option-list
-				search-popup(*ngIf="text && sizingSrv.isSm()", [text]="text", (onClose)="onInput('')")
+					search-option-list(*ngIf="searchResult.length", [results]="searchResult")
+				search-popup(*ngIf="text && sizingSrv.isSm()", [text]="text", [results]="searchResult", (onClose)="onInput('')")
 
 	.home-hero-section-header
 		custom-title(text="Most Searched Breeds" position="bottom")
@@ -27,6 +27,6 @@ section
 		.home-hero-section-header__breeds-list
 			.home-hero-section-header__breed(*ngFor="let bredd of breedList")
 				.home-hero-section-header__img
-					custom-img([data]="bredd.src", [alt]="bredd.text")
+					custom-img([data]="bredd.image.url", [alt]="bredd.name")
 
-				p.home-hero-section-header__title {{ bredd.text }}
+				p.home-hero-section-header__title {{ bredd.name }}

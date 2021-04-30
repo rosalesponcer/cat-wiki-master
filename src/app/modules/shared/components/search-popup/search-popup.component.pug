@@ -9,14 +9,5 @@
 			search-input([text]="text", [border]="true", [popup]="true")
 
 		.search-popup__results
-			.search-popup__result
-				span American Bobtail
-
-			.search-popup__result
-				span American Curl
-
-			.search-popup__result
-				span American Shorthair
-
-			.search-popup__result
-				span American Wirehair
+			.search-popup__result(*ngFor="let breed of results")
+				span {{ result.name }}

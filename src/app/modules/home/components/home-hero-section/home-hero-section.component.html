@@ -10,9 +10,9 @@
           <search-input *ngIf="!text || !sizingSrv.isSm()" (onInput)="onInput($event)"></search-input>
         </div>
         <div class="home-hero-section__result-list" *ngIf="text &amp;&amp; !sizingSrv.isSm()">
-          <search-option-list></search-option-list>
+          <search-option-list *ngIf="searchResult.length" [results]="searchResult"></search-option-list>
         </div>
-        <search-popup *ngIf="text &amp;&amp; sizingSrv.isSm()" [text]="text" (onClose)="onInput('')"></search-popup>
+        <search-popup *ngIf="text &amp;&amp; sizingSrv.isSm()" [text]="text" [results]="searchResult" (onClose)="onInput('')"></search-popup>
       </div>
     </div>
   </div>
@@ -22,9 +22,9 @@
     <div class="home-hero-section-header__breeds-list">
       <div class="home-hero-section-header__breed" *ngFor="let bredd of breedList">
         <div class="home-hero-section-header__img">
-          <custom-img [data]="bredd.src" [alt]="bredd.text"></custom-img>
+          <custom-img [data]="bredd.image.url" [alt]="bredd.name"></custom-img>
         </div>
-        <p class="home-hero-section-header__title">{{ bredd.text }}</p>
+        <p class="home-hero-section-header__title">{{ bredd.name }}</p>
       </div>
     </div>
   </div>

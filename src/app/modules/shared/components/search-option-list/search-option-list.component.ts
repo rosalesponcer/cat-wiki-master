@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'search-option-list',
@@ -6,4 +6,6 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['search-option-list.component.scss']
 })
 
-export class SearchOptionListComponent { }
+export class SearchOptionListComponent {
+	@Input() results: any[] = []
+}

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IBreed } from 'src/app/interfaces';
 
 @Component({
 	selector: 'search-popup',
@@ -8,6 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export class SearchPopupComponent {
 	@Input() text: string = '';
+	@Input() results: IBreed[] = [];
 	@Output() onClose = new EventEmitter<boolean>();
 
 	ngOnInit() {
