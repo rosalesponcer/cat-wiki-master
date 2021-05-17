@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
 	selector: 'search-option-list',
@@ -8,4 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class SearchOptionListComponent {
 	@Input() results: any[] = []
+
+	@Output() onSelect = new EventEmitter<any>();
+
+	selectResult(result: any) {
+		this.onSelect.emit(result);
+	}
 }

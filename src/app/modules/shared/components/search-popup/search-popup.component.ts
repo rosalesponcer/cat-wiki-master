@@ -31,7 +31,7 @@ export class SearchPopupComponent {
 			text = text || '';
 			this.text = text;
 
-			this.breedSrv.searchByName({ q: text })
+			this.breedSrv.searchByParam({ q: text })
 				.subscribe(res => {
 					this.results = res;
 				});

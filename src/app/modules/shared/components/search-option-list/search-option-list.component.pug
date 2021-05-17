@@ -1,4 +1,4 @@
 .search-option-list
 	.search-option-list__container
-		.search-option-list__option(*ngFor="let result of results")
+		.search-option-list__option(*ngFor="let result of results", (click)="selectResult(result)")
 			span {{ result.name }}

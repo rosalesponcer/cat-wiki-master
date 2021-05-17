@@ -48,6 +48,15 @@ export interface IParameters {
 	attach_breed?: number;
 	page?: number;
 	limit?: number;
+	breed_ids?: string;
 
 	q?: string;
+}
+
+export interface IImage {
+	id?: string;
+	breeds?: IBreed[];
+	url?: string;
+	height?: number;
+	width?: number;
 }

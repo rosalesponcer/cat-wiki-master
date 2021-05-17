@@ -16,7 +16,7 @@ section
 					search-input(*ngIf="!text || !sizingSrv.isSm()", (onInput)="onInput($event)")
 
 				.home-hero-section__result-list(*ngIf="text && !sizingSrv.isSm()")
-					search-option-list(*ngIf="searchResult.length", [results]="searchResult")
+					search-option-list(*ngIf="searchResult.length", [results]="searchResult", (onSelect)="selectBreed($event)")
 				search-popup(*ngIf="text && sizingSrv.isSm()", [text]="text", [results]="searchResult", (onClose)="onInput('')")
 
 	.home-hero-section-header
@@ -25,8 +25,8 @@ section
 		h2.home-hero-section-header__subtitle 66+ Breeds For you to discover
 
 		.home-hero-section-header__breeds-list
-			.home-hero-section-header__breed(*ngFor="let bredd of breedList")
-				.home-hero-section-header__img
-					custom-img([data]="bredd.image.url", [alt]="bredd.name")
+			.home-hero-section-header__breed(*ngFor="let breed of breedList", (click)="selectBreed(breed)")
+				.home-hero-section-header__img(*ngIf="breed.image?.url")
+					custom-img([data]="breed.image.url", [alt]="breed.name")
 
-				p.home-hero-section-header__title {{ bredd.name }}
+				p.home-hero-section-header__title {{ breed.name }}

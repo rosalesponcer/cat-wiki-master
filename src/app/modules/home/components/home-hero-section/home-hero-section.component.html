@@ -10,7 +10,7 @@
           <search-input *ngIf="!text || !sizingSrv.isSm()" (onInput)="onInput($event)"></search-input>
         </div>
         <div class="home-hero-section__result-list" *ngIf="text &amp;&amp; !sizingSrv.isSm()">
-          <search-option-list *ngIf="searchResult.length" [results]="searchResult"></search-option-list>
+          <search-option-list *ngIf="searchResult.length" [results]="searchResult" (onSelect)="selectBreed($event)"></search-option-list>
         </div>
         <search-popup *ngIf="text &amp;&amp; sizingSrv.isSm()" [text]="text" [results]="searchResult" (onClose)="onInput('')"></search-popup>
       </div>
@@ -20,11 +20,11 @@
     <custom-title text="Most Searched Breeds" position="bottom"></custom-title>
     <h2 class="home-hero-section-header__subtitle">66+ Breeds For you to discover</h2>
     <div class="home-hero-section-header__breeds-list">
-      <div class="home-hero-section-header__breed" *ngFor="let bredd of breedList">
-        <div class="home-hero-section-header__img">
-          <custom-img [data]="bredd.image.url" [alt]="bredd.name"></custom-img>
+      <div class="home-hero-section-header__breed" *ngFor="let breed of breedList" (click)="selectBreed(breed)">
+        <div class="home-hero-section-header__img" *ngIf="breed.image?.url">
+          <custom-img [data]="breed.image.url" [alt]="breed.name"></custom-img>
         </div>
-        <p class="home-hero-section-header__title">{{ bredd.name }}</p>
+        <p class="home-hero-section-header__title">{{ breed.name }}</p>
       </div>
     </div>
   </div>
