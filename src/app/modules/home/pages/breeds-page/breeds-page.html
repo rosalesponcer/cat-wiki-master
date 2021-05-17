@@ -1,0 +1,79 @@
+
+<div class="breeds-page container" *ngIf="breed">
+  <app-header></app-header>
+  <div class="breeds-page-main">
+    <div class="breeds-page-main__img">
+      <custom-img *ngIf="mainImg &amp;&amp; mainImg.url" [data]="mainImg.url"></custom-img>
+    </div>
+    <div class="breeds-page-main-content">
+      <h2 class="breeds-page__title" *ngIf="breed.name">{{ breed.name }}</h2>
+      <p class="breeds-page-main-content__desc" *ngIf="breed.name">{{ breed.description }}</p>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.temperament">
+        <p class="breeds-page-main-content__characteristic">Temperament:&nbsp;</p><span class="breeds-page-main-content__characteristic-value">{{ breed.temperament }}</span>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.origin">
+        <p class="breeds-page-main-content__characteristic">Origin:&nbsp;</p><span class="breeds-page-main-content__characteristic-value">{{ breed.origin }}</span>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.life_span">
+        <p class="breeds-page-main-content__characteristic">Life Span:&nbsp;</p><span class="breeds-page-main-content__characteristic-value">{{ breed.life_span }}</span>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.adaptability">
+        <p class="breeds-page-main-content__characteristic breeds-page-main-content__characteristic--bar">Adaptability:</p>
+        <div class="breeds-page-main-content__bar">
+          <level-bar [levelValue]="breed.adaptability"></level-bar>
+        </div>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.affection_level">
+        <p class="breeds-page-main-content__characteristic breeds-page-main-content__characteristic--bar">Affection level:</p>
+        <div class="breeds-page-main-content__bar">
+          <level-bar [levelValue]="breed.affection_level"></level-bar>
+        </div>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.child_friendly">
+        <p class="breeds-page-main-content__characteristic breeds-page-main-content__characteristic--bar">Child Friendly:</p>
+        <div class="breeds-page-main-content__bar">
+          <level-bar [levelValue]="breed.child_friendly"></level-bar>
+        </div>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.grooming">
+        <p class="breeds-page-main-content__characteristic breeds-page-main-content__characteristic--bar">Grooming:</p>
+        <div class="breeds-page-main-content__bar">
+          <level-bar [levelValue]="breed.grooming"></level-bar>
+        </div>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.intelligence">
+        <p class="breeds-page-main-content__characteristic breeds-page-main-content__characteristic--bar">Intelligence:</p>
+        <div class="breeds-page-main-content__bar">
+          <level-bar [levelValue]="breed.intelligence"></level-bar>
+        </div>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.health_issues">
+        <p class="breeds-page-main-content__characteristic breeds-page-main-content__characteristic--bar">Health issues:</p>
+        <div class="breeds-page-main-content__bar">
+          <level-bar [levelValue]="breed.health_issues"></level-bar>
+        </div>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.social_needs">
+        <p class="breeds-page-main-content__characteristic breeds-page-main-content__characteristic--bar">Social needs:</p>
+        <div class="breeds-page-main-content__bar">
+          <level-bar [levelValue]="breed.social_needs"></level-bar>
+        </div>
+      </div>
+      <div class="breeds-page-main-content__characteristic-container" *ngIf="breed.stranger_friendly">
+        <p class="breeds-page-main-content__characteristic breeds-page-main-content__characteristic--bar">Stranger friendly:</p>
+        <div class="breeds-page-main-content__bar">
+          <level-bar [levelValue]="breed.stranger_friendly"></level-bar>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="breeds-page-imgs">
+    <h2 class="breeds-page__title">Other photos</h2>
+    <div class="breeds-page-imgs__container">
+      <div class="breeds-page-imgs__img" *ngFor="let img of otherImg">
+        <custom-img [data]="img.url" [alt]="breed.name"></custom-img>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

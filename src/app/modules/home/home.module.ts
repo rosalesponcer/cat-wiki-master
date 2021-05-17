@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { homeRoutes } from './home.routing';
+
 
 import { HomePageModule } from './pages/home-page.module';
 import { HomeComponentsModule } from './components/home-components.module';
+import { homeRouting } from './home.routing';
 
 
 
@@ -15,8 +16,6 @@ const LIST = [
 @NgModule({
 
 	imports: [
-		RouterModule.forChild(homeRoutes),
-
 		HomePageModule,
 		HomeComponentsModule
 	],

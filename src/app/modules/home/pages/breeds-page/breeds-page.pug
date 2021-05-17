@@ -1,0 +1,73 @@
+.breeds-page.container(*ngIf="breed")
+	app-header
+
+	.breeds-page-main
+
+		.breeds-page-main__img
+			custom-img(*ngIf="mainImg && mainImg.url", [data]="mainImg.url")
+
+		.breeds-page-main-content
+			h2.breeds-page__title(*ngIf="breed.name") {{ breed.name }}
+
+			p.breeds-page-main-content__desc(*ngIf="breed.name") {{ breed.description }}
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.temperament")
+				p.breeds-page-main-content__characteristic Temperament:&nbsp;
+				span.breeds-page-main-content__characteristic-value {{ breed.temperament }}
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.origin")
+				p.breeds-page-main-content__characteristic Origin:&nbsp;
+				span.breeds-page-main-content__characteristic-value {{ breed.origin }}
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.life_span")
+				p.breeds-page-main-content__characteristic Life Span:&nbsp;
+				span.breeds-page-main-content__characteristic-value {{ breed.life_span }}
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.adaptability")
+				p.breeds-page-main-content__characteristic.breeds-page-main-content__characteristic--bar Adaptability:
+				.breeds-page-main-content__bar
+					level-bar([levelValue]="breed.adaptability")
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.affection_level")
+				p.breeds-page-main-content__characteristic.breeds-page-main-content__characteristic--bar Affection level:
+				.breeds-page-main-content__bar
+					level-bar([levelValue]="breed.affection_level")
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.child_friendly")
+				p.breeds-page-main-content__characteristic.breeds-page-main-content__characteristic--bar Child Friendly:
+				.breeds-page-main-content__bar
+					level-bar([levelValue]="breed.child_friendly")
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.grooming")
+				p.breeds-page-main-content__characteristic.breeds-page-main-content__characteristic--bar Grooming:
+				.breeds-page-main-content__bar
+					level-bar([levelValue]="breed.grooming")
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.intelligence")
+				p.breeds-page-main-content__characteristic.breeds-page-main-content__characteristic--bar Intelligence:
+				.breeds-page-main-content__bar
+					level-bar([levelValue]="breed.intelligence")
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.health_issues")
+				p.breeds-page-main-content__characteristic.breeds-page-main-content__characteristic--bar Health issues:
+				.breeds-page-main-content__bar
+					level-bar([levelValue]="breed.health_issues")
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.social_needs")
+				p.breeds-page-main-content__characteristic.breeds-page-main-content__characteristic--bar Social needs:
+				.breeds-page-main-content__bar
+					level-bar([levelValue]="breed.social_needs")
+
+			.breeds-page-main-content__characteristic-container(*ngIf="breed.stranger_friendly")
+				p.breeds-page-main-content__characteristic.breeds-page-main-content__characteristic--bar Stranger friendly:
+				.breeds-page-main-content__bar
+					level-bar([levelValue]="breed.stranger_friendly")
+
+	.breeds-page-imgs
+		h2.breeds-page__title Other photos
+
+		.breeds-page-imgs__container
+			.breeds-page-imgs__img(*ngFor="let img of otherImg")
+				custom-img([data]="img.url", [alt]='breed.name')
+
+	app-footer

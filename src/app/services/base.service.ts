@@ -9,20 +9,38 @@ const BASE = BASE_URL;
 
 export class BaseService<T> {
 	constructor(
-		private __endPoitn: string,
-		private __httpCli: HttpClient
+		private __endPoint: string,
+		private __httpClient: HttpClient
 	) { }
 
-	searchByName(params) {
-		return this.query(params, '/search');
+	searchByParam(params: IParameters) {
+		return this.query(params, 'search');
+	}
+
+	searchOneByParam(params: IParameters) {
+		return this.getOne(params, 'search');
 	}
 
 	query(params: IParameters, addUrl?: string) {
 		addUrl = addUrl || '';
-		return this.__httpCli.get<T[]>(BASE + this.__endPoitn + addUrl, {
+		let url = BASE + this.__endPoint + '/' + addUrl;
+
+		return this.__httpClient.get<T[]>(url, {
 			headers: this._buildHeaders(),
 			params: this._buildParams(params)
 		})
+	}
+
+	getOne(params: IParameters, addUrl?: string) {
+
+		addUrl = addUrl || '';
+		let url = BASE + this.__endPoint + '/' + addUrl;
+
+		return this.__httpClient.get<T>(url, {
+			headers: this._buildHeaders(),
+			params: this._buildParams(params)
+		})
+
 	}
 
 	private _buildHeaders() {
@@ -30,7 +48,6 @@ export class BaseService<T> {
 			'Content-Type': 'application/json',
 			'x-api-key': CREDENTIAL
 		}
-
 	}
 
 	private _buildParams(params: IParameters) {
