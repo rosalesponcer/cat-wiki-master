@@ -30,9 +30,19 @@
         font-size: 1.125rem;
         line-height: 1.375rem;
 
+
         &:hover,
-        &:focus {
+        &:focus,
+        &--active {
             background: $smoke-color;
         }
+    }
+
+    &__button {
+        margin: 0;
+        padding: 0;
+        background: none;
+        outline: none;
+        border: none;
     }
 }

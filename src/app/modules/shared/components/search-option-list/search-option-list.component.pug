@@ -1,4 +1,5 @@
 .search-option-list
-	.search-option-list__container
-		.search-option-list__option(*ngFor="let result of results", (click)="selectResult(result)")
-			span {{ result.name }}
+	.search-option-list__container((keydown.arrowdown)="onKeyPress($event)", (keydown.arrowup)="onKeyPress($event)")
+		.search-option-list__option(*ngFor="let result of results;let i = index", (click)="selectResult(result)")
+			button.search-option-list__button((blur)="onBlur($event.target)")
+				span {{ result.name }}

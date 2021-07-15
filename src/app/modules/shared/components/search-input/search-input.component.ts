@@ -15,6 +15,7 @@ export class SearchInputComponent {
 	@Input() popup: boolean = false;
 
 	@Output() onInput = new EventEmitter<string>();
+	@Output() onDirectionKey = new EventEmitter<string>();
 
 
 	constructor(
@@ -25,6 +26,14 @@ export class SearchInputComponent {
 		if (this.popup && this.text && this.inputElement) {
 			this.inputElement.nativeElement.focus();
 		}
+	}
+
+
+	directionKey(event: KeyboardEvent) {
+		event.preventDefault();
+		(<HTMLInputElement>event.target).blur();
+
+		this.onDirectionKey.emit(event.key);
 	}
 
 	sendText() {

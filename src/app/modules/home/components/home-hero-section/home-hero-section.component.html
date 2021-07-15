@@ -7,10 +7,10 @@
         <div class="logo-container" *ngIf="!sizingSrv.isSm()"><img class="logo-container__name" src="../../../../../assets/media/svg/nameLogo.svg" alt="Cat logo"><img class="logo-container__cat" src="../../../../../assets/media/svg/catLogo.svg" alt="Cat logo"></div>
         <h3 class="home-hero-section__desc">Get to know more about your cat breed</h3>
         <div class="home-hero-section__input">
-          <search-input *ngIf="!text || !sizingSrv.isSm()" (onInput)="onInput($event)"></search-input>
+          <search-input *ngIf="!text || !sizingSrv.isSm()" (onInput)="onInput($event)" (onDirectionKey)="keyPresses = $event"></search-input>
         </div>
         <div class="home-hero-section__result-list" *ngIf="text &amp;&amp; !sizingSrv.isSm()">
-          <search-option-list *ngIf="searchResult.length" [results]="searchResult" (onSelect)="selectBreed($event)"></search-option-list>
+          <search-option-list *ngIf="searchResult.length" [results]="searchResult" [setFocus]="keyPresses" (onSelect)="selectBreed($event)"></search-option-list>
         </div>
         <search-popup *ngIf="text &amp;&amp; sizingSrv.isSm()" [text]="text" [results]="searchResult" (onClose)="onInput('')"></search-popup>
       </div>

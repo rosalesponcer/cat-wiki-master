@@ -1,6 +1,8 @@
 
 <div class="search-option-list">
-  <div class="search-option-list__container">
-    <div class="search-option-list__option" *ngFor="let result of results" (click)="selectResult(result)"><span>{{ result.name }}</span></div>
+  <div class="search-option-list__container" (keydown.arrowdown)="onKeyPress($event)" (keydown.arrowup)="onKeyPress($event)">
+    <div class="search-option-list__option" *ngFor="let result of results;let i = index" (click)="selectResult(result)">
+      <button class="search-option-list__button" (blur)="onBlur($event.target)"><span>{{ result.name }}</span></button>
+    </div>
   </div>
 </div>

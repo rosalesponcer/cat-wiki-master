@@ -133,13 +133,15 @@
         padding: 1.3125rem 1.8125rem;
 
         &__subtitle {
-            width: 11.57rem;
-            height: 2.75rem;
+            // width: 11.57rem;
+            // height: 2.75rem;
 
             margin-top: 1.079375rem !important;
 
             font-size: 1.125rem;
             line-height: 1.375rem;
+
+			min-height: fit-content;
         }
 
         &__breeds-list {
@@ -161,11 +163,12 @@
         padding: 2.5rem 6.75rem;
 
         &__subtitle {
-            width: 33.558125rem;
-            height: 7.375rem;
+            // width: 33.558125rem;
+            // height: 7.375rem;
 
             font-size: 3rem;
             line-height: 3.6875rem;
+			min-height: 7.375rem;
         }
 
         &__breeds-list {
@@ -184,6 +187,8 @@
         padding: 0;
 
         font-weight: $bold;
+
+        max-width: 33.558125rem;
     }
 
     &__breed {

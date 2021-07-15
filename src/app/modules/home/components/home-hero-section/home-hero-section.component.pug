@@ -7,20 +7,21 @@ section
 				h1.home-hero-section__title(*ngIf="sizingSrv.isSm()") catwiki
 
 				.logo-container(*ngIf="!sizingSrv.isSm()")
-					img.logo-container__name(src="../../../../../assets/media/svg/nameLogo.svg" alt="Cat logo")
-					img.logo-container__cat(src="../../../../../assets/media/svg/catLogo.svg" alt="Cat logo")
+					img.logo-container__name(src="../../../../../assets/media/svg/nameLogo.svg", alt="Cat logo")
+					img.logo-container__cat(src="../../../../../assets/media/svg/catLogo.svg", alt="Cat logo")
 
 				h3.home-hero-section__desc Get to know more about your cat breed
 
 				.home-hero-section__input
-					search-input(*ngIf="!text || !sizingSrv.isSm()", (onInput)="onInput($event)")
+					search-input(*ngIf="!text || !sizingSrv.isSm()", (onInput)="onInput($event)", (onDirectionKey)="keyPresses = $event")
 
 				.home-hero-section__result-list(*ngIf="text && !sizingSrv.isSm()")
-					search-option-list(*ngIf="searchResult.length", [results]="searchResult", (onSelect)="selectBreed($event)")
+					search-option-list(*ngIf="searchResult.length", [results]="searchResult", [setFocus]="keyPresses", (onSelect)="selectBreed($event)")
+
 				search-popup(*ngIf="text && sizingSrv.isSm()", [text]="text", [results]="searchResult", (onClose)="onInput('')")
 
 	.home-hero-section-header
-		custom-title(text="Most Searched Breeds" position="bottom")
+		custom-title(text="Most Searched Breeds", position="bottom")
 
 		h2.home-hero-section-header__subtitle 66+ Breeds For you to discover
 

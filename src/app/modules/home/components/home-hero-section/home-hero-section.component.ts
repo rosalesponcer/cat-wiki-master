@@ -18,6 +18,8 @@ export class HomeHeroSection {
 	breedList: IBreed[] = [];
 	searchResult: IBreed[] = [];
 
+	keyPresses: 'ArrowUp' | 'ArrowDown';
+
 	constructor(
 		public sizingSrv: SizingService,
 		private breedSrv: BreedService,
