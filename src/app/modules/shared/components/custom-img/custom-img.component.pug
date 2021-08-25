@@ -1,7 +1,7 @@
 .custom-img
 	img.custom-img__content(
 		loading="lazy",
-		[src]="data",
+		[src]="data || 'https://placekitten.com/200/300'",
 		[alt]='alt',
 		[ngClass]="typeClass",
 

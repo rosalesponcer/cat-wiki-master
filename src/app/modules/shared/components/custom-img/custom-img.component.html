@@ -1,5 +1,5 @@
 
-<div class="custom-img"><img class="custom-img__content" loading="lazy" [src]="data" [alt]="alt" [ngClass]="typeClass" (load)="loaded = true">
+<div class="custom-img"><img class="custom-img__content" loading="lazy" [src]="data || 'https://placekitten.com/200/300'" [alt]="alt" [ngClass]="typeClass" (load)="loaded = true">
   <div class="spinner" *ngIf="!loaded">
     <div class="spinner__body"></div>
   </div>

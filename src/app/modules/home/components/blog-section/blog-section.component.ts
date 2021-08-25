@@ -5,5 +5,4 @@ import { Component, OnInit } from '@angular/core';
 	templateUrl: 'blog-section.component.html',
 	styleUrls: ['blog-section.component.scss']
 })
-
 export class BlogSection { }
