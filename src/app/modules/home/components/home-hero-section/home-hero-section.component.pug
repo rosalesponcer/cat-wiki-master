@@ -7,8 +7,8 @@ section
 				h1.home-hero-section__title(*ngIf="sizingSrv.isSm()") catwiki
 
 				.logo-container(*ngIf="!sizingSrv.isSm()")
-					img.logo-container__name(src="../../../../../assets/media/svg/nameLogo.svg", alt="Cat logo")
-					img.logo-container__cat(src="../../../../../assets/media/svg/catLogo.svg", alt="Cat logo")
+					img.logo-container__name(src="../../../../../assets/media/svg/nameLogo.svg" alt="Cat logo")
+					img.logo-container__cat(src="../../../../../assets/media/svg/catLogo.svg" alt="Cat logo")
 
 				h3.home-hero-section__desc Get to know more about your cat breed
 
@@ -21,11 +21,12 @@ section
 				search-popup(*ngIf="text && sizingSrv.isSm()", [text]="text", [results]="searchResult", (onClose)="onInput('')")
 
 	.home-hero-section-header
-		custom-title(text="Most Searched Breeds", position="bottom")
+		custom-title(text="Most Searched Breeds" position="bottom")
 
 		h2.home-hero-section-header__subtitle 66+ Breeds For you to discover
 
 		.home-hero-section-header__breeds-list
+
 			.home-hero-section-header__breed(*ngFor="let breed of breedList", (click)="selectBreed(breed)")
 				.home-hero-section-header__img(*ngIf="breed.image?.url")
 					custom-img([data]="breed.image.url", [alt]="breed.name")
