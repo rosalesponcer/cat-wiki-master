@@ -1,5 +1,12 @@
 .custom-img
-	img.custom-img__content(loading="lazy", [src]="data", [alt]='alt', [ngClass]="typeClass", (load)="loaded = true")
+	img.custom-img__content(
+		loading="lazy",
+		[src]="data || 'https://placekitten.com/200/300'",
+		[alt]='alt',
+		[ngClass]="typeClass",
+
+		(load)="loaded = true")
+
 
 	.spinner(*ngIf="!loaded")
 		.spinner__body

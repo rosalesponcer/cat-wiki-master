@@ -76,5 +76,6 @@
 
     &__img {
         width: calc((100% - 3*(2.875rem))/4);
+		max-height: 31.25rem;
     }
 }

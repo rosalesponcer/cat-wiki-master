@@ -1,11 +1,11 @@
-import { Component, SimpleChanges } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { HERO_IMG_LIST, IImg } from 'src/app/const';
-import { IBreed } from 'src/app/interfaces';
+
 import { SizingService } from 'src/app/providers/sizing.service';
 import { BreedService } from 'src/app/services/breed.service';
 
-
+import { IBreed } from 'src/app/interfaces';
+import { SubscriptionBin } from 'src/app/modules/core/helpers/SubscriptionBin';
 
 @Component({
 	selector: 'home-hero-section',
@@ -17,7 +17,9 @@ export class HomeHeroSection {
 	text: string = '';
 	breedList: IBreed[] = [];
 	searchResult: IBreed[] = [];
+	keyPresses: 'ArrowUp' | 'ArrowDown';
 
+	subscriptions = new SubscriptionBin();
 	constructor(
 		public sizingSrv: SizingService,
 		private breedSrv: BreedService,
@@ -27,11 +29,15 @@ export class HomeHeroSection {
 	ngOnInit() {
 		let page = Math.floor(Math.random() * (16 - 0)) + 0;
 
-		this.breedSrv.query({ limit: 4, page })
+		this.subscriptions.add = this.breedSrv.query({ limit: 4, page })
 			.subscribe(breeds => {
 				this.breedList = breeds;
 				console.log(breeds)
 			});
+	}
+
+	ngOnDestroy() {
+		this.subscriptions.clearAll();
 	}
 
 	onInput(text: string = '') {
@@ -43,10 +49,8 @@ export class HomeHeroSection {
 				.subscribe(res => {
 					this.searchResult = res;
 				});
-		}, 150);
+		}, 0);
 	}
 
-	selectBreed(breed: IBreed) {
-		this._router.navigate([`breed/${breed.name}`]);
-	}
+	selectBreed = (breed: IBreed) => this._router.navigate([`breed/${breed.name}`]);
 }

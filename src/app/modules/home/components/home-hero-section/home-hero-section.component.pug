@@ -13,10 +13,11 @@ section
 				h3.home-hero-section__desc Get to know more about your cat breed
 
 				.home-hero-section__input
-					search-input(*ngIf="!text || !sizingSrv.isSm()", (onInput)="onInput($event)")
+					search-input(*ngIf="!text || !sizingSrv.isSm()", (onInput)="onInput($event)", (onDirectionKey)="keyPresses = $event")
 
 				.home-hero-section__result-list(*ngIf="text && !sizingSrv.isSm()")
-					search-option-list(*ngIf="searchResult.length", [results]="searchResult", (onSelect)="selectBreed($event)")
+					search-option-list(*ngIf="searchResult.length", [results]="searchResult", [setFocus]="keyPresses", (onSelect)="selectBreed($event)")
+
 				search-popup(*ngIf="text && sizingSrv.isSm()", [text]="text", [results]="searchResult", (onClose)="onInput('')")
 
 	.home-hero-section-header
@@ -25,6 +26,7 @@ section
 		h2.home-hero-section-header__subtitle 66+ Breeds For you to discover
 
 		.home-hero-section-header__breeds-list
+
 			.home-hero-section-header__breed(*ngFor="let breed of breedList", (click)="selectBreed(breed)")
 				.home-hero-section-header__img(*ngIf="breed.image?.url")
 					custom-img([data]="breed.image.url", [alt]="breed.name")
